@@ -1,7 +1,11 @@
+"use client"
+
 import Image from 'next/image'
 import logo from "@/../public/logo.svg"
 import rame from "@/../public/rame.svg"
 import { useState } from 'react'
+import background1 from "../../public/background1.png"
+import { Form } from './components/form'
 
 type FormData = {
 
@@ -32,62 +36,34 @@ export default function Home() {
 
   };
   return (
-    <div className="bg-[#FFFFFF] w-screen h-screen overflow-hidden">
-      <div className='w-full px-[45px] py-[18px]'>
-        <Image
-          src={logo}
-          alt='..'
-        />
-      </div>
+    <div className='bg-[#141416] w-screen h-screen flex justify-between'>
+      <div className='  w-[700px]  h-screen overflow-auto'>
+
+        <div className='w-full py-[44px] px-[70px] flex justify-between'>
+          <Image
+            src={logo}
+            alt='..'
+
+          />
 
 
-      <div className='flex w-full justify-center items-center'>
-        <div className='h-[500px] w-[456px]'>
-          <div className='flex flex-col gap-4 mb-[25px]'>
-            <h1 className='text-[28px] text-zinc-800 font-semibold'>Formulário de Adesão</h1>
-            <p className='text-[#575F6E] text-[16px] w-[456px] font-normal'>texto testing in the data for profile. It will take a couple of minutes. </p>
-          </div>
-
-
-          <div className='flex gap-4'>
-            <input
-              onChange={(event) => handleFormData(event, 'nome')}
-              type="checkbox"
-              name="" id="" />
-            <div className='flex gap-2'>
-              <p className='text-[16px] text-zinc-800 font-normal'>Aceitas o termos de privacidade da</p>
-              <p className='text-[16px] text-[#00A7E1] font-normal'>gsc?</p>
-            </div>
-          </div>
-
-          <div className='w-full h-[456px] border-[1px] border-[#E2E4E5] rounded-md py-[32px] px-[32px]'>
-            <h1 className='text-[20px] mb-[30px] text-[#242731] font-semibold'>Gera já o seu tickes!</h1>
-
-            <div className='flex flex-col gap-4'>
-              <div className='flex flex-col gap-3'>
-                <p className='text-[14px] font-normal text-[#242426]'>Nome</p>
-                <input type="text" className='w-[392px] py-[10px] px-4 outline-none border-b-[1px] placeholder:text-[#242426] border-b-[#E2E4E5]' placeholder='Digite o seu nome' />
-              </div>
-
-              <div className='flex flex-col gap-3'>
-                <p className='text-[14px] font-normal text-[#242426]'>Email</p>
-                <input type="text" className='w-[392px] py-[10px] px-4 outline-none border-b-[1px] placeholder:text-[#242426] border-b-[#E2E4E5]' placeholder='Digite o email' />
-              </div>
-
-              <div className='flex flex-col gap-3'>
-                <p className='text-[14px] font-normal text-[#242426]'>Tipo de tickets</p>
-                <input type="text" className='w-[392px] py-[10px] px-4 outline-none border-b-[1px] placeholder:text-[#242426] border-b-[#E2E4E5]' placeholder='Digite o tipo de tickets' />
-              </div>
-            </div>
+          <div className='flex gap-3 text-[#FFFF] font-semibold '>
+            <h1 className='hover:text-[#dad9d9] duration-700 transition-all hover:cursor-pointer'>Particular</h1>
+            <h1 className='hover:text-[#dad9d9] duration-700 transition-all hover:cursor-pointer'>Entidade</h1>
           </div>
         </div>
 
+        <div>
+          <Form />
+        </div>
 
+      </div>
 
+      <div className=' flex-1 h-screen overflow-hidden'>
         <Image
-          src={rame}
+          src={background1}
           alt='..'
-          className='hidden lg:flex'
+          className='w-full h-screen object-cover'
         />
       </div>
     </div>
